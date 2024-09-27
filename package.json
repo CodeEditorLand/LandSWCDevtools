@@ -1,12 +1,11 @@
 {
-	"activationEvents": [
-		"onCommand:workbench.action.tasks.runTask",
-		"onCommand:swc.dev.uiTest.update",
-		"onLanguage:rust-ui-test-output",
-		"onLanguage:rust",
-		"onDebug",
-		"workspaceContains:**/Cargo.toml"
-	],
+	"name": "swc-dev",
+	"displayName": "swc developement",
+	"description": "",
+	"main": "./out/extension",
+	"scripts": {
+		"compile": "tsc -p ./"
+	},
 	"contributes": {
 		"breakpoints": [
 			{
@@ -372,27 +371,28 @@
 			]
 		}
 	},
+	"activationEvents": [
+		"onCommand:workbench.action.tasks.runTask",
+		"onCommand:swc.dev.uiTest.update",
+		"onLanguage:rust-ui-test-output",
+		"onLanguage:rust",
+		"onDebug",
+		"workspaceContains:**/Cargo.toml"
+	],
 	"dependencies": {
 		"glob": "11.0.0",
 		"jsonstream": "1.0.3",
 		"which": "4.0.0"
 	},
-	"description": "",
 	"devDependencies": {
 		"@types/glob": "8.1.0",
 		"@types/jsonstream": "0.8.33",
 		"@types/node": "22.7.3",
 		"@types/which": "3.0.4"
 	},
-	"displayName": "swc developement",
 	"extensionDependencies": [
 		"ms-vscode.cpptools",
 		"rust-lang.rust"
 	],
-	"main": "./out/extension",
-	"name": "swc-dev",
-	"preview": true,
-	"scripts": {
-		"compile": "tsc -p ./"
-	}
+	"preview": true
 }
